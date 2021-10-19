@@ -1,0 +1,98 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace hw4_task2_
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e) //triangle
+        {
+            label2.Text = "Enter the sides of triangle:";
+            label2.Visible = true;
+            textBox1.Visible = true;
+            textBox2.Visible = true;
+            textBox3.Visible = true;
+            button6.Visible = true;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Triangle t = new Triangle(double.Parse(textBox1.Text), double.Parse(textBox2.Text), double.Parse(textBox3.Text));
+            label3.Text = t.WriteRes();
+            label3.Visible = true;
+        }
+        private void button2_Click(object sender, EventArgs e)//circle
+        {
+            label2.Text = "enter radius of circle:";
+            label2.Visible = true;
+            textBox1.Visible = true;
+            button7.Visible = true;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Circle c = new Circle(double.Parse(textBox1.Text));
+            label3.Text = c.WriteRes();
+            label3.Visible = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e) //rectangle
+        {
+            label2.Text = "enter sides of rectangle:";
+            label2.Visible = true;
+            textBox1.Visible = true;
+            textBox2.Visible = true;
+            button8.Visible = true;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Rectangle r = new Rectangle(double.Parse(textBox1.Text), double.Parse(textBox2.Text));
+            label3.Text = r.WriteRes();
+            label3.Visible = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e) //square
+        {
+            label2.Text = "Enter the side of square:";
+            label2.Visible = true;
+            textBox1.Visible = true;
+            button9.Visible = true;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Square s = new Square(double.Parse(textBox1.Text));
+            label3.Text = s.WriteRes();
+            label3.Visible = true;
+        }
+
+        private void button5_Click(object sender, EventArgs e)//rhombus
+        {
+            label2.Text = "enter the side and the angle of the rhombus:";
+            label2.Visible = true;
+            textBox1.Visible = true;
+            textBox2.Visible = true;
+            button10.Visible = true;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Rhombus r=new Rhombus(double.Parse(textBox1.Text), double.Parse(textBox2.Text));
+            label3.Text = r.WriteRes();
+            label3.Visible = true;
+        }
+    }
+}
