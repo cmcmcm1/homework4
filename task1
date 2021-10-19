@@ -1,0 +1,37 @@
+using System;
+using System.Windows.Forms;
+
+namespace hw4_task1_
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        Triangle triangle = new Triangle(0, 0, 0);
+        private void button1_Click(object sender, EventArgs e)
+        {
+            triangle.C = double.Parse(textBox1.Text);
+            triangle.A = double.Parse(textBox2.Text);
+            triangle.B = double.Parse(textBox3.Text);
+            if (triangle.A > 0 && triangle.B > 0 && triangle.C > 0)
+            {
+                label5.Text = $"Angle A={triangle.getAngleA()}";ta
+                label5.Visible = true;
+                label6.Text = $"Angle B={triangle.getAngleB()}";
+                label6.Visible = true;
+                label7.Text = $"Angle C={triangle.getAngleC()}";
+                label7.Visible = true;                
+                label8.Text = $"Perimiter of triangle ABC={triangle.getPerimeter()}";
+                label8.Visible = true;
+            }
+            else
+            {
+                label9.Text = "WRONG DATA ENTERED";
+                label9.Visible = true;
+            }
+        }
+    }
+    
+}
